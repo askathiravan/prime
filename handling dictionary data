@@ -1,0 +1,25 @@
+def cal_per(person):
+    total_marks = sum(person["marks"])
+    return(total_marks/4)
+a=[
+    {"name":"raju","age":23,"marks":[45,50,40,60]},
+    {"name":"raju","age":23,"marks":[45,50,40,60]},
+    {"name":"raju","age":23,"marks":[45,50,40,60]}
+]
+b=sorted(a,key=cal_per,reverse=True)
+pos=1
+for i in b:
+    if pos ==1:
+        des="first"
+    elif pos==2:
+        des="second"
+    elif pos==3:
+        des="third"
+    elif pos==4:
+        des="fourth"
+    elif pos==5:
+        des="fifth"
+        
+    percentage=cal_per(i)
+    print("{} wit per {:2f}% stands -> {}".format(i["name"],percentage,des))
+    pos=pos+1
